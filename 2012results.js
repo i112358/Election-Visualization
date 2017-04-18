@@ -86,11 +86,5 @@ function results(year){
         });
       });
     }
-
-    function drawChart(code){
-
-    }
   });
 }
-
-//show bar chart of results for that state
