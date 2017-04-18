@@ -70,7 +70,7 @@ function results(year){
             .attr("y", function(d,i) { return y(votes[i]); })
             .attr("height", function(d,i) { return height - y(votes[i]); })
             .attr("width", x.bandwidth())
-            .on("mouseover", function(d,i){return tooltip.text(votes[i]).style("visibility", "visible");})
+            .on("mouseover", function(d,i){return tooltip.text(candidate[i]+", "+votes[i]).style("visibility", "visible");})
             .on("mousemove", function(d,i){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(d,i){return tooltip.style("visibility", "hidden");});
 

@@ -16,8 +16,8 @@ var svg = d3.select("body").append("svg")
 svg.append("rect")
     .attr("class", "background")
     .attr("width", width)
-    .attr("height", height)
-    .on("click", clicked);
+    .attr("height", height);
+    //.on("click", clicked);
 
 var g = svg.append("g");
 
@@ -34,8 +34,8 @@ d3.json("us.json", function(us) {
           .selectAll("path")
           .data(topojson.feature(us, us.objects.states).features)
           .enter().append("path").attr("id",function(d){return names[d.id];})
-          .attr("d", path)
-          .on("click", clicked);
+          .attr("d", path);
+          //.on("click", clicked);
 
         g.append("path")
             .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
@@ -63,7 +63,7 @@ d3.json("us.json", function(us) {
     });
 });
 
-function clicked(d) {
+/*function clicked(d) {
   var x, y, k;
 
   if (d && centered !== d) {
@@ -86,4 +86,4 @@ function clicked(d) {
       .duration(750)
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
       .style("stroke-width", 1.5 / k + "px");
-}
+}*/
